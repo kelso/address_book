@@ -1,0 +1,21 @@
+<h1>Kontakty</h1>
+
+<p>
+  Pocet kontaktov: <%= @contacts.total_count %>
+</p>
+
+<table border="1">
+  <tr>
+    <th>Meno</th>
+    <th>Mobil</th>
+  </tr>
+
+  <% @contacts.each do |contact| %>
+    <tr>
+      <td><%= contact.name %></td>
+      <td><%= contact.phone %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @contacts %>
